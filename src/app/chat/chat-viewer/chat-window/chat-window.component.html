@@ -4,9 +4,10 @@
 </div>
 <div class="chat-history">
         <ng-container *ngFor="let chat of ((chat || {}).chats || [])">
-                <div class="sender" *ngIf="!!chat.owner; else friend" >{{chat.text}}</div>
+                <div *ngIf="!!chat.owner; else friend" class="receiver">{{chat.text}}</div>
+
                 <ng-template #friend>
-                        <div class="receiver" >{{chat.text}}</div>
+                        <div class="sender">{{chat.text}}</div>
                 </ng-template>
         </ng-container>
 </div>
