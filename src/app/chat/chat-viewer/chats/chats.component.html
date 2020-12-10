@@ -1,0 +1,12 @@
+<div class="chats-header">
+    <img src="assets/image/search.png" class="search-image">
+    <input [(ngModel)]="text" (keyup)="textChange()" class="search-box" type="text" placeholder="search" />
+</div>
+<div class="chat-container">
+    <ng-container *ngFor="let chat of filteredChats;let i=index">
+        <div (click)="chatSelected(chat.order)" class="chat">
+            <img src="assets/image/chatter.jpeg" class="avatar">
+            <span class="friend" [innerHTML]="chat.friend"></span>
+        </div>
+    </ng-container>
+</div>

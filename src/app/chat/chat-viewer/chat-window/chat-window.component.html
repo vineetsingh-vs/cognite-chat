@@ -1,0 +1,16 @@
+<div class="chat-window-header">
+        <img *ngIf="!!chat" src="assets/image/chatter.jpeg" class="avatar">
+        <div class="chatter-name">{{(chat || {}).friend}}</div>
+</div>
+<div class="chat-history">
+        <ng-container *ngFor="let chat of ((chat || {}).chats || [])">
+                <div class="sender" *ngIf="!!chat.owner; else friend" >{{chat.text}}</div>
+                <ng-template #friend>
+                        <div class="receiver" >{{chat.text}}</div>
+                </ng-template>
+        </ng-container>
+</div>
+<div class="chat-window-footer">
+        <textarea class="text-area" [(ngModel)]="text" (keyup.enter)="onTextChange()"></textarea>
+        <img class="avatar" (click)="onTextChange()" src="assets/image/save.png" class="avatar">
+</div>

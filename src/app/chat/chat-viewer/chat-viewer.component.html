@@ -1,0 +1,9 @@
+<div class="chat-header" ></div>
+<div class="chat-container">
+    <div class="left">
+        <chats (selectedIndex)="activeIndex = $event" [chats]="chats"></chats>
+    </div>
+    <div class="right">
+        <chat-window (activeChatIndex)="reShuffleChats($event)" [chat]="(chats || [])[activeIndex]"></chat-window>
+    </div> 
+</div>

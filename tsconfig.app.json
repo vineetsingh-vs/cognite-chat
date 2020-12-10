@@ -5,7 +5,7 @@
     "types": []
   },
   "files": [
-    "src/main.ts",
+    "src/chat.main.ts",
     "src/polyfills.ts"
   ],
   "include": [
